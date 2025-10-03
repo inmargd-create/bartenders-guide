@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Практика 4</title>
+  <style>
+    body{
+        background-image: url(https://a-static.besthdwallpaper.com/falling-miles-morales-spider-man-wallpaper-2560x1440-42170_51.jpg)
+    }
+    .card {
+  background: rgba(0, 0, 0, 0.678);
+  border-radius: 18px;
+  padding: 10px;
+  margin: 160px 20px;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+    .card.video {
+  display: flex;           
+  flex-direction: column;    
+  align-items: flex;   
+  height: auto;             
+  margin: 20px 20px 20px auto;            
+  position: relative;
+  top: 0px;
+  right: 700px;
+  max-width: 420px;
+}
+h1{
+    font-size: 46px;
+    text-align: center;
+    color: azure;
+}
+.audio {
+  background: rgba(3, 3, 3, 0.452);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  color: white;
+  position: relative;
+  right: 10px;
+}
+
+.audio h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.audio-card audio {
+  width: 100%;
+  outline: none;
+  border-radius: 6px;
+}
+.logo2{
+    max-width: 20%;
+    height: auto;
+    position: absolute;
+    left: 1200px;
+    top: 500px;
+    border-radius: 100px;
+}
+  </style>
+<head>
+    
+  <body>
+    <img src="logo1.jpg" class="logo2">
+
+    <h1> Моя мультимедийная страница</h1>
+    <div class="card video">
+      <video id="myvideo" controls width="400" loop>
+        <source src="edit.mp4" type="video/mp4" class="video">
+      </video>
+      <div class="audio">
+  <audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+</div>
+    </div>
+     <script>
+    const video = document.getElementById("myvideo");
+    video.volume = 0.25;
+    </script>
+  </body>
+</head>

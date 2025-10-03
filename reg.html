@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Регистрация и Опросник</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      color: #ffffff;
+    }
+    .frame {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+    .left {
+      background: #3f3f3f;
+      border-right: 2px solid #ccc;
+    }
+    .right {
+      background: #313131;
+    }
+    h2 {
+      text-align: center;
+      color: #ffffff;
+        text-shadow:
+    -1px -1px 0 rgb(0, 0, 0),  
+     1px -1px 0 black,  
+    -1px  1px 0 black,  
+     1px  1px 0 black;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, select, button {
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .range-value {
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="frame left">
+    <h2>Регистрация</h2>
+    <form action="Bartender guide.html" method="get">
+      <input type="text" placeholder="Имя" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Пароль" required>
+      <button type="submit">Зарегистрироваться</button>
+      <button type="reset">Очистить</button>
+    </form>
+  </div>
+
+  <div class="frame right">
+    <h2>Опросник</h2>
+    <form>
+      <label>Ваш возраст:</label>
+      <select>
+        <option>До 18</option>
+        <option>18–25</option>
+        <option>26–35</option>
+        <option>36–50</option>
+        <option>50+</option>
+      </select>
+
+      <label> Сколько лет вы проработали в общепите <br>
+        <input type="text" placeholder="Сколько лет">
+      </label>
+
+      <label>Любимый напиток:</label>
+      <input type="text" placeholder="Введите вариант">
+
+      <label>Вы пробовали готовить коктейли?</label>
+      <input type="radio" name="cocktails" value="yes"> Да
+      <input type="radio" name="cocktails" value="no"> Нет
+
+      <label> Сколько видов прозрачного алкоголя вы знаете?  
+        <select>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4+</option>
+        </select>
+      </label>
+
+      <label> Насколько сильно вы хотите работать за баром
+        <input type="text" placeholder="напиши">
+      </label>
+
+      <label> Чем вы можете заинтересовать работодателя
+        <input type="text" placeholder="напиши пожалуйста">
+      </label>
+      <label>Какие виды напитков вам нравятся? (можно несколько)</label>
+      <input type="checkbox" name="drinks" value="coffee"> Кофе
+      <input type="checkbox" name="drinks" value="tea"> Чай
+      <input type="checkbox" name="drinks" value="cocktails"> Коктейли
+      <input type="checkbox" name="drinks" value="juice"> Соки
+
+      <label>Ваш любимый бар или кафе:</label>
+      <input type="text" placeholder="Название заведения">
+
+      <label>Оцените свои знания барной культуры (от 1 до 10):</label>
+      <input type="range" min="1" max="10" step="1" value="5" oninput="rangeValue.textContent=this.value">
+      <span class="range-value" id="rangeValue">5</span>
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <script>
+    const rangeInput = document.querySelector('input[type="range"]');
+    const rangeValue = document.getElementById('rangeValue');
+    rangeInput.addEventListener('input', () => {
+      rangeValue.textContent = rangeInput.value;
+    });
+  </script>
+</body>
+</html>
